@@ -11,7 +11,6 @@ import {Keg} from './keg.model';
     <hr>
     <new-keg (newKegSender)='addKeg($event)'></new-keg>
   </div>
-
   `
 })
 
