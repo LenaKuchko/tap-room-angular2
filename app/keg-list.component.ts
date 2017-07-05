@@ -12,6 +12,8 @@ import {Keg} from './keg.model';
         <li>Volume: {{currentKeg.volume}}</li>
       </ul>
       <button (click)="editButtonClicked(currentKeg)">Edit</button>
+      <button (click)="showInfoButtonClicked(currentKeg)">Show Info</button>
+      <button (click)=""></button>
     </h3>
   `
 })
