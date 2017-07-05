@@ -24,10 +24,10 @@ import {Keg} from './keg.model';
   <div>
     <label>Enter Volume:</label>
     <select #newVolume>
-      <option [value]="1"> 5 gal </option>
-      <option [value]="2"> 7 gal </option>
-      <option [value]="3"> 10 gal </option>
-      <option [value]="4"> 15 gal </option>
+      <option [value]="5"> 5 gal </option>
+      <option [value]="7"> 7 gal </option>
+      <option [value]="10"> 10 gal </option>
+      <option [value]="15"> 15 gal </option>
     </select>
     <button class='btn' (click)='submitForm(newName.value, newBrandName.value, newPrice.value, newAlcoholContent.value, newVolume.value)'>Add new Keg</button>
   </div>
