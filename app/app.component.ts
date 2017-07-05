@@ -26,6 +26,7 @@ export class AppComponent {
 
   addKeg(kegToAdd: Keg) {
     this.masterKegList.push(kegToAdd);
+    this.start = false;
   }
 
   finishedEditing() {

@@ -4,7 +4,6 @@ import {Keg} from './keg.model';
 @Component({
   selector: 'new-keg',
   template:`
-
   <div *ngIf='startAdd'>
     <h1>New Keg</h1>
     <div>
