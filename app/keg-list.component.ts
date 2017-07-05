@@ -5,15 +5,15 @@ import {Keg} from './keg.model';
   selector: 'keg-list',
   template: `
   <ul>
-      <li *ngFor="let currentKeg of kegs">{{currentKeg.name}}{{currentKeg.brand}}</li>
-    </ul>
+    <li *ngFor="let currentKeg of childKegList">{{currentKeg.name}} {{currentKeg.brand}}</li>
+  </ul>
   `
 })
 
 
 export class KegListComponent {
   @Input() childKegList : Keg[];
-  @Output() clickSender = new EventEmitter();
 
-  
+  // @Output() clickSender = new EventEmitter();
+
 }

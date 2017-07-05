@@ -7,7 +7,7 @@ import {Keg} from './keg.model';
   <div class="container">
     <h1>Tap Room</h1>
     <h3>All available kegs</h3>
-    <keg-list [childKegList]='masterKegList'></keg-list>
+    <keg-list [childKegList]="masterKegList"></keg-list>
     <hr>
     <new-keg (newKegSender)='addKeg($event)'></new-keg>
   </div>
