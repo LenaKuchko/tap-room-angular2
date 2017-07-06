@@ -8,7 +8,7 @@ import {Keg} from './keg.model';
     <h1>Tap Room</h1>
     <h3>All available kegs</h3>
     <button (click)='startAdding()'>Add new keg</button>
-    <keg-list [childKegList]="masterKegList" (clickSender)='receiveEditKeg($event)' (clickBuyDrinkSender)='receiveKegToSell($event)'></keg-list>
+    <keg-list [childKegList]="masterKegList" (clickSender)='receiveEditKeg($event)'></keg-list>
     <hr>
     <edit-keg [childSelectedKeg]='selectedKeg' (doneButtonClickedSender)='finishedEditing()'></edit-keg>
     <new-keg [startAdd]='start' (newKegSender)='addKeg($event)'></new-keg>
