@@ -9,8 +9,8 @@ import {Keg} from './keg.model';
         <li>Name: {{currentKeg.brand}}</li>
         <li>Brand: {{currentKeg.price}}</li>
         <li>Alcohol Content: {{currentKeg.alcoholContent}}</li>
-        <li>Volume: {{currentKeg.volume}}</li>
-        <li>Amount Left: {{currentKeg.leftAmount}}</li>
+        <li>Volume (gallons): {{currentKeg.volume}}</li>
+        <li>Amount Left (gallons): {{currentKeg.leftAmount}}</li>
 
       </ul>
       <button (click)="editButtonClicked(currentKeg)">Edit</button>
@@ -21,6 +21,7 @@ import {Keg} from './keg.model';
 
 export class KegListComponent {
   @Input() childKegList : Keg[];
+  // @Input() childSellQuantity : number;
   @Output() clickSender = new EventEmitter();
   @Output() clickBuyDrinkSender = new EventEmitter();
 
@@ -31,7 +32,8 @@ export class KegListComponent {
 
   buyDrinkClicked(currentKeg)
   {
-    currentKeg.sellDrink(1);
-    // this.clickBuyDrinkSender.emit(currentKeg);
+    this.clickBuyDrinkSender.emit(currentKeg);
+    // console.log(currentKeg);
+    // currentKeg.sellPintDrink(1);
   }
 }
