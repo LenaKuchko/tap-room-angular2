@@ -17,13 +17,21 @@ import {Keg} from './keg.model';
   `
 })
 
+
+
 export class AppComponent {
   selectedKeg = null;
   kegToSell = null;
   start: boolean = false;
 
   masterKegList: Keg[] = [
-    new Keg("Keg1", "Belgium", 45, 3, 5)
+    new Keg("Keg1", "Belgium", 4, 3, 5),
+    new Keg("Keg2", "Belgium", 3, 6, 5),
+    new Keg("Keg3", "Belgium", 2, 3, 7),
+    new Keg("Keg4", "German", 2, 4, 7),
+    new Keg("Keg5", "German", 2, 1, 7),
+    new Keg("Keg6", "German", 2, 9, 7)
+
   ];
 
   addKeg(kegToAdd: Keg) {

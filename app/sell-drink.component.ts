@@ -24,6 +24,6 @@ export class SellDrinkComponent {
   confirmClicked()
   {
     this.childKegToSell.sellPintDrink(this.quantity);
-    this.confirmButtonClickedSender.emit();
+    this.confirmButtonClickedSender.emit(this.childKegToSell);
   }
 }

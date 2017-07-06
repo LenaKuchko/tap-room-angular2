@@ -3,7 +3,7 @@
   "description": "",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/LenaKuchko/tap-room-angular2",
   "ignore": [
     "**/.*",
     "node_modules",
