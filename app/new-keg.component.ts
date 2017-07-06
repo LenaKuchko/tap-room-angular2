@@ -30,7 +30,7 @@ import {Keg} from './keg.model';
         <option [value]="10"> 10 gal </option>
         <option [value]="15"> 15 gal </option>
       </select>
-      <button class='btn' (click)='submitForm(newName.value, newBrandName.value, newPrice.value, newAlcoholContent.value, newVolume.value)'>Add new Keg</button>
+      <button class='btn' (click)='submitForm(newName.value, newBrandName.value, newPrice.value, newAlcoholContent.value, newVolume.value)'>Add</button>
     </div>
   </div>
   `
@@ -40,6 +40,7 @@ export class NewKegComponent {
   @Output() newKegSender = new EventEmitter();
   @Output() addButtonClickedSender = new EventEmitter();
   @Input() startAdd: boolean;
+
   submitForm(name: string, brand: string, price: number, alcoholContent: number, volume: number) {
     const newKegToAdd: Keg = new Keg(name, brand, price, alcoholContent, volume);
     this.newKegSender.emit(newKegToAdd);

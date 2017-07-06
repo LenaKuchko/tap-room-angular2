@@ -7,8 +7,8 @@ import {Keg} from './keg.model';
   <div class="container">
     <h1>Tap Room</h1>
     <h3>All available kegs</h3>
-    <button (click)='startAdding()' >Add</button>
-    <keg-list [childKegList]="masterKegList" (clickSender)='editKeg($event)'></keg-list>
+    <button (click)='startAdding()'>Add new keg</button>
+    <keg-list [childKegList]="masterKegList" (clickSender)='receiveEditKeg($event)' (clickBuyDrinkSender)='receiveKegToSell($event)'></keg-list>
     <hr>
     <edit-keg [childSelectedKeg]='selectedKeg' (doneButtonClickedSender)='finishedEditing()'></edit-keg>
     <new-keg [startAdd]='start' (newKegSender)='addKeg($event)'></new-keg>
@@ -18,6 +18,7 @@ import {Keg} from './keg.model';
 
 export class AppComponent {
   selectedKeg = null;
+  kegToSell = null;
   start: boolean = false;
 
   masterKegList: Keg[] = [
@@ -33,7 +34,7 @@ export class AppComponent {
     this.selectedKeg = null;
   }
 
-  editKeg(clickedKeg: Keg)
+  receiveEditKeg(clickedKeg: Keg)
   {
     this.selectedKeg = clickedKeg;
   }
@@ -43,5 +44,9 @@ export class AppComponent {
     this.start = true;
   }
 
+  receiveKegToSell(clickedKeg: Keg)
+  {
+    this.kegToSell = clickedKeg;
+  }
 
 }
