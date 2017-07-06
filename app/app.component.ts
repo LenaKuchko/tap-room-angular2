@@ -24,6 +24,7 @@ export class AppComponent {
   kegToSell = null;
   start: boolean = false;
 
+
   masterKegList: Keg[] = [
     new Keg("Keg1", "Belgium", 4, 3, 5),
     new Keg("Keg2", "Belgium", 3, 6, 5),

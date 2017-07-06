@@ -10,7 +10,9 @@ import {Keg} from './keg.model';
       <option value="aboveFourPoint">Strong Beer</option>
     </select>
 
-    <h3 *ngFor="let currentKeg of childKegList | sort:sortFilter"><strong> <h2>{{currentKeg.name}}</h2></strong>
+    <button (click)="happyHourClicked()">Happy hour</button>
+
+    <h4 *ngFor="let currentKeg of childKegList | sort:sortFilter"><strong> <h3><input type="checkbox" [checked]="addKegToHappyHour" (change)="!addKegToHappyHour"/>{{currentKeg.name}}</h3></strong>
       <ul>
         <li>Brand: {{currentKeg.brand}}</li>
         <li>Price: {{currentKeg.price}}</li>
@@ -20,7 +22,7 @@ import {Keg} from './keg.model';
       </ul>
       <button (click)="editButtonClicked(currentKeg)">Edit</button>
       <button (click)="buyDrinkClicked(currentKeg)">Buy drink</button>
-    </h3>
+    </h4>
   `
 })
 
@@ -38,22 +40,25 @@ export class KegListComponent {
   buyDrinkClicked(currentKeg)
   {
     this.clickBuyDrinkSender.emit(currentKeg);
-    // console.log(currentKeg);
-    // currentKeg.sellPintDrink(1);
   }
+
   remainderColor(currentKeg)
   {
-    console.log(currentKeg.leftAmount);
     if (currentKeg.leftAmount >= 5){
-      return "full";
+      return "bg-info";
     } else if(currentKeg.leftAmount <=5 && currentKeg.leftAmount > 1){
-        return "middle";
+        return "bg-danger";
     } else if(currentKeg.leftAmount <=1){
-      return "empty"
+      return "bg-success";
     }
   }
 
   onChange(optionFromMenu) {
     this.sortFilter = optionFromMenu;
+  }
+
+  happyHourClicked()
+  {
+
   }
 }
